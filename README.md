@@ -97,38 +97,6 @@
 
 ---
 
-## ■ リポジトリ構成
-
-```
-
-ActEdge/
-├── README.md
-├── LICENSE
-├── requirements.txt
-├── data/
-│   ├── raw/
-│   └── processed/
-├── models/
-│   ├── trained\_model.pkl
-│   └── model.onnx
-├── notebooks/
-│   ├── train\_model.ipynb
-│   └── evaluate\_model.ipynb
-├── src/
-│   ├── main.py
-│   ├── config.py
-│   ├── inference/
-│   ├── parser/
-│   ├── scoring/
-│   ├── rules/
-│   └── utils/
-├── tests/
-├── docs/
-
-```
-
----
-
 ## ■ ライセンス
 
 本プロジェクトは [MIT License](./LICENSE) のもとで公開されています。
@@ -137,6 +105,6 @@ ActEdge/
 
 ## ■ 開発者
 
-- 作成者: あなたのお名前
-- GitHub: [github.com/yourname](https://github.com/yourname)
-- 連絡先: your.email@example.com
+- 作成者: 佐藤 幸一
+- GitHub: [github.com/koichi2426](https://github.com/koichi2426)
+- 連絡先: satoyskkh200426@gmail.com
