@@ -20,7 +20,7 @@
 | 入力① | 環境情報：時間帯、場所、周囲音、照明、温湿度、使用中のデバイスなど                                                  |
 | 入力② | ペルソナ情報：年齢、性格、生活習慣、疲労度、目的、嗜好など                                                      |
 | 入力③ | 発言情報（省略可）：自然言語の発話・入力（例：「ちょっと一息つきたい」）                                               |
-| 入力④ | 候補メソッド群：RelaxMusic, SuggestBreak, NotifyHydration, LaunchFocusApp, **NoAction** など |
+| 入力④ | 候補メソッド群：RelaxMusic, SuggestBreak, NotifyHydration, LaunchFocusApp, **NoAction** など(未知メソッド) |
 | 出力  | 最適なメソッド（1つ、例：`SuggestBreak` または `NoAction`）とその理由（スコア・根拠付き）                         |
 
 ---
