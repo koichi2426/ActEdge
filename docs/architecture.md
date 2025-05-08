@@ -1,4 +1,3 @@
-```markdown
 # ActEdge – 軽量リアルタイム行動選択エンジン
 
 ユーザーの環境・ペルソナ・発言から、**今この瞬間に最も適した行動（メソッド）** をリアルタイムに選択する、モバイル・組み込み対応の軽量推論エンジン。
@@ -141,4 +140,3 @@ ActEdge/
 - 作成者: あなたのお名前
 - GitHub: [github.com/yourname](https://github.com/yourname)
 - 連絡先: your.email@example.com
-```
