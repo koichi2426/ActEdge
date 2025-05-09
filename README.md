@@ -23,6 +23,51 @@
 | 入力④ | 候補メソッド群：RelaxMusic, SuggestBreak, NotifyHydration, LaunchFocusApp, **NoAction** など(未知メソッド) |
 | 出力  | 最適なメソッド（1つ、例：`SuggestBreak` または `NoAction`）とその理由（スコア・根拠付き）                         |
 
+### 入力仕様
+
+```json
+{
+  "environment": {
+    "time_of_day": "午後",
+    "location": "オフィス",
+    "ambient_sound": "静穏",
+    "lighting": "暖色",
+    "temperature": "25°C",
+    "humidity": "40%",
+    "device_in_use": "スマートフォン"
+  },
+  "persona": {
+    "age": 30,
+    "personality": "外向的",
+    "lifestyle": "忙しい",
+    "fatigue_level": "中程度",
+    "purpose": "集中作業",
+    "preferences": ["音楽", "静かな空間"]
+  },
+  "utterance": {
+    "text": "ちょっと一息つきたい",
+    "language": "日本語"
+  },
+  "candidate_methods": [
+    "RelaxMusic",
+    "SuggestBreak",
+    "NotifyHydration",
+    "LaunchFocusApp",
+    "NoAction"
+  ]
+}
+```
+
+# 出力仕様
+```json
+{
+  "selected_method": "SuggestBreak",
+  "reason": {
+    "score": 85,
+    "explanation": "ユーザーが一息つきたいという発言と疲労度から、休憩を提案するのが最適と判断された。"
+  }
+}
+```
 ---
 
 ## ■ コア処理構造（Decision Engine）
