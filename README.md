@@ -112,7 +112,7 @@
 
 ## ■ ライセンス
 
-MIT License（[LICENSE](./LICENSE)）
+MIT License（[LICENSE](https://opensource.org/license/mit)）
 
 ---
 
