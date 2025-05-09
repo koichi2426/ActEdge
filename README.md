@@ -58,7 +58,7 @@
 }
 ```
 
-# 出力仕様
+### 出力仕様
 ```json
 {
   "selected_method": "SuggestBreak",
