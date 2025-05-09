@@ -24,7 +24,6 @@
 | 出力  | 最適なメソッド（1つ、例：`SuggestBreak` または `NoAction`）とその理由（スコア・根拠付き）                         |
 
 ### 入力仕様
-![image](https://github.com/user-attachments/assets/8a5092a5-11b3-4ec2-9d3a-b7c83e918ef3)
 
 ```json
 {
