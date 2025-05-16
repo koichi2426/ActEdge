@@ -1,0 +1,54 @@
+[{"role":"system","content":"You are an AI reasoning engine that selects the single most appropriate action (or the choice of non-intervention) based on the user's environment and persona information, and explains the reasoning with a score. Based on the following input, select one optimal method from the candidate methods and return it in JSON format with a score (0–100) and an explanation.
+
+Output format:
+{
+  "selected_method": "<selected method name>",
+  "reason": {
+    "score": <integer from 0 to 100>,
+    "explanation": "<reasoning>"
+  }
+}
+
+Note: If the situation is stable and intervention is unnecessary, select "NoAction"."},{"role":"user","content":"【Environmental Information】
+- Time of day: Afternoon
+- Current location: Office
+- Ambient noise: 40dB
+- Lighting: Fluorescent light
+- Temperature: 24°C
+- Humidity: 45%
+- CO2 concentration: 600ppm
+- Device acceleration: 0.2
+- Presence of others: Yes
+- Crowd level: 0.5
+
+【Persona Information】
+- Age: 32
+- Gender: Female
+- Occupation: Engineer
+- Lifestyle: Lives alone
+- Health condition: 2
+- Sleep schedule: 00:00/07:30
+- Chronotype: Night type
+- Eating habits: 2
+- Exercise habits: 1
+- Multitasking tendency: 4
+- Concentration duration: 60 minutes
+- Work style: Fully remote
+- Favorite music: Electro
+- Frequently used app: Slack
+- Relaxation method: Stretching
+- Notification tolerance: 2
+- Preferred learning content: Reading
+- Preferred workspace: Coworking space
+- Favorite season/weather: Autumn
+- Favorite drink: Coffee
+- Favorite food: Japanese cuisine
+- Favorite video genre: Documentary
+- Favorite reading genre: Practical books
+
+【Candidate Methods】
+- RelaxMusic
+- SuggestBreak
+- NotifyHydration
+- LaunchFocusApp
+- NoAction"}]

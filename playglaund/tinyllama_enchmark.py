@@ -15,7 +15,7 @@ model = AutoModelForCausalLM.from_pretrained(
 )
 
 # プロンプト
-prompt = "Explain the theory of relativity in simple terms."
+prompt =  '''[{"role":"system","content":"You are an AI reasoning engine that selects the single most appropriate action (or the choice of non-intervention) based on the user's environment and persona information, and explains the reasoning with a score. Based on the following input, select one optimal method from the candidate methods and return it in JSON format with a score (0–100) and an explanation.\n\nOutput format:\n{\n  \"selected_method\": \"<selected method name>\",\n  \"reason\": {\n    \"score\": <integer from 0 to 100>,\n    \"explanation\": \"<reasoning>\"\n  }\n}\n\nNote: If the situation is stable and intervention is unnecessary, select \"NoAction\"."},{"role":"user","content":"【Environmental Information】\n- Time of day: Afternoon\n- Current location: Office\n- Ambient noise: 40dB\n- Lighting: Fluorescent light\n- Temperature: 24°C\n- Humidity: 45%\n- CO2 concentration: 600ppm\n- Device acceleration: 0.2\n- Presence of others: Yes\n- Crowd level: 0.5\n\n【Persona Information】\n- Age: 32\n- Gender: Female\n- Occupation: Engineer\n- Lifestyle: Lives alone\n- Health condition: 2\n- Sleep schedule: 00:00/07:30\n- Chronotype: Night type\n- Eating habits: 2\n- Exercise habits: 1\n- Multitasking tendency: 4\n- Concentration duration: 60 minutes\n- Work style: Fully remote\n- Favorite music: Electro\n- Frequently used app: Slack\n- Relaxation method: Stretching\n- Notification tolerance: 2\n- Preferred learning content: Reading\n- Preferred workspace: Coworking space\n- Favorite season/weather: Autumn\n- Favorite drink: Coffee\n- Favorite food: Japanese cuisine\n- Favorite video genre: Documentary\n- Favorite reading genre: Practical books\n\n【Candidate Methods】\n- RelaxMusic\n- SuggestBreak\n- NotifyHydration\n- LaunchFocusApp\n- NoAction"}]'''
 inputs = tokenizer(prompt, return_tensors="pt").to(model.device)
 
 # powermetrics で電力取得
@@ -51,8 +51,13 @@ if power_before is not None and power_after is not None:
 else:
     avg_power = estimated_energy_j = None
 
-# 結果表示
-print(tokenizer.decode(outputs[0], skip_special_tokens=True))
+# 結果保存
+output_text = tokenizer.decode(outputs[0], skip_special_tokens=True)
+with open("tinyllama_output.txt", "w", encoding="utf-8") as f:
+    f.write(output_text)
+
+# メタ情報表示
+print(output_text)
 print(f"\n⏱ 推論時間: {elapsed_time:.3f} 秒")
 print(f"🔢 生成トークン数: {num_generated_tokens}")
 if num_generated_tokens > 0:
