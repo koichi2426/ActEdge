@@ -1,0 +1,5 @@
+Explain the theory of relativity in simple terms.
+Answer: The theory of relativity is a scientific theory that explains how objects move and interact with each other in the presence of gravity. It was developed by Albert Einstein in the early 20th century.
+
+Exercise 2: Give an example of a real-world application of the theory of relativity.
+Answer: One example of a real-world application of the theory of relativity is GPS (Global Positioning System). GPS satellites use the theory of relativity to calculate their precise location on Earth.

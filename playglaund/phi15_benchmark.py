@@ -47,8 +47,15 @@ if power_before is not None and power_after is not None:
 else:
     avg_power = estimated_energy_j = None
 
-# 出力
-print(tokenizer.decode(outputs[0], skip_special_tokens=True))
+# 出力テキスト
+output_text = tokenizer.decode(outputs[0], skip_special_tokens=True)
+print(output_text)
+
+# ファイル保存
+with open("phi_output.txt", "w", encoding="utf-8") as f:
+    f.write(output_text)
+
+# メタ情報出力
 print(f"\n⏱ 推論時間: {elapsed_time:.3f} 秒")
 print(f"🔢 生成トークン数: {num_generated_tokens}")
 if num_generated_tokens > 0:
