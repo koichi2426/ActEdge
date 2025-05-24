@@ -46,6 +46,17 @@
 * **推論エンジン実装：**
   Amazon EC2上にC++製推論APIサーバーを構築し、ONNX形式のモデルを使用してリアルタイム推論を実行。S3バケットを利用してモデルやログを管理。
 
+## 使用言語や使用ツール
+C++（推論APIサーバー実装）
+
+Python（モデル学習・前処理）
+
+Amazon EC2（APIサーバー運用）
+
+Amazon S3（モデル・ログ管理）
+
+Linux環境（サーバーインフラ）
+
 ## ポスター
 
 ![image](https://github.com/user-attachments/assets/a5f8540b-5013-4243-bf44-e45266c67164)
