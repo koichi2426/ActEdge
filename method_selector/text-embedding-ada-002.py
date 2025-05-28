@@ -1,10 +1,19 @@
-from sentence_transformers import SentenceTransformer, util
+import openai
 import numpy as np
+import os
+from dotenv import load_dotenv
 
-# モデル読み込み（日本語にも強めの汎用軽量モデル）
-model = SentenceTransformer("paraphrase-MiniLM-L6-v2")
+load_dotenv()
+api_key = os.getenv("OPENAI_API_KEY")
+client = openai.OpenAI(api_key=api_key)
 
-# Step 1: ユーザー状態
+def cosine_similarity(vec1, vec2):
+    return np.dot(vec1, vec2) / (np.linalg.norm(vec1) * np.linalg.norm(vec2))
+
+def get_embedding(text, model="text-embedding-ada-002"):
+    response = client.embeddings.create(input=[text], model=model)
+    return response.data[0].embedding
+
 user_sentence = (
     "35歳の女性医師。家族と暮らしており、朝型の生活スタイルでリモートワーク中。"
     "現在は秋の金曜日の朝6時、静かなオフィスにいる。"
@@ -12,7 +21,6 @@ user_sentence = (
     "カフェが好きで、瞑想をリラックス手段とし、タイ料理と映画が好み。"
 )
 
-# Step 2: メソッド候補
 methods = [
     "ルート最適化を行う",
     "状況に応じたスポット提案を行う",
@@ -22,14 +30,10 @@ methods = [
     "何もしない"
 ]
 
-# Step 3: ベクトル化
-user_vec = model.encode(user_sentence, convert_to_tensor=True)
-method_vecs = model.encode(methods, convert_to_tensor=True)
+user_vec = get_embedding(user_sentence)
+method_vecs = [get_embedding(m) for m in methods]
 
-# Step 4: 類似度スコアを一括で計算
-scores = util.cos_sim(user_vec, method_vecs)[0].tolist()
-
-# Step 5: 最もスコアの高いメソッドを出力
+scores = [cosine_similarity(user_vec, vec) for vec in method_vecs]
 best_method = methods[np.argmax(scores)]
 
 print("最も適した抽象メソッド:", best_method)
