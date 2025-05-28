@@ -1,7 +1,10 @@
 from sentence_transformers import SentenceTransformer, util
 import numpy as np
 
-# Step 1: ユーザー状態 → 自然文に変換
+# モデル読み込み（日本語にも強めの汎用軽量モデル）
+model = SentenceTransformer("paraphrase-MiniLM-L6-v2")
+
+# Step 1: ユーザー状態
 user_sentence = (
     "35歳の女性医師。家族と暮らしており、朝型の生活スタイルでリモートワーク中。"
     "現在は秋の金曜日の朝6時、静かなオフィスにいる。"
@@ -9,7 +12,7 @@ user_sentence = (
     "カフェが好きで、瞑想をリラックス手段とし、タイ料理と映画が好み。"
 )
 
-# Step 2: 候補メソッド（事前登録）
+# Step 2: メソッド候補
 methods = [
     "ルート最適化を行う",
     "状況に応じたスポット提案を行う",
@@ -19,13 +22,12 @@ methods = [
     "何もしない"
 ]
 
-# Step 3: 軽量モデル読み込み
-model = SentenceTransformer("all-MiniLM-L6-v2")  # 実運用ではTinyBERTのONNXに置き換え
+# Step 3: ベクトル化
+user_vec = model.encode(user_sentence, convert_to_tensor=True)
+method_vecs = model.encode(methods, convert_to_tensor=True)
 
-# Step 4: ベクトル化＆類似度評価
-user_vec = model.encode(user_sentence)
-method_vecs = model.encode(methods)
-scores = [util.cos_sim(user_vec, vec).item() for vec in method_vecs]
+# Step 4: 類似度スコアを一括で計算
+scores = util.cos_sim(user_vec, method_vecs)[0].tolist()
 
 # Step 5: 最もスコアの高いメソッドを出力
 best_method = methods[np.argmax(scores)]
