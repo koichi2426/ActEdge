@@ -73,7 +73,7 @@ def select_best_method(user_text):
 # 実行テスト用（CLIなど）
 # ==========================
 if __name__ == "__main__":
-    user_input = "地震が発生した。"
+    user_input = "here's a tsunami warning and people are evacuating to shelters."
     results = select_best_method(user_input)
 
     print("\n[ユーザー入力]", user_input)

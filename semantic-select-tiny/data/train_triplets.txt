@@ -1,20 +1,20 @@
-Working on a laptop at a morning café	Suggest food rest and shopping options	Provide safety and emergency support
-A man in his 30s drinking coffee before work	Suggest spots based on the situation	Do nothing
-Watching TV with family in the evening living room	Do nothing	Optimize the route
-Walking a dog in the park	Suggest events activities and photo opportunities	Suggest food rest and shopping options
-Reading indoors on a rainy day	Do nothing	Suggest events activities and photo opportunities
-A university student studying at a café	Suggest food rest and shopping options	Provide safety and emergency support
-Having a meeting in the office in the afternoon	Optimize the route	Suggest events activities and photo opportunities
-A housewife preparing breakfast	Suggest food rest and shopping options	Provide safety and emergency support
-Someone working quietly in a library	Suggest spots based on the situation	Suggest events activities and photo opportunities
-Joining a remote meeting	Optimize the route	Suggest events activities and photo opportunities
-A mother playing with her child in the park during the day	Suggest events activities and photo opportunities	Optimize the route
-Using a smartphone in bed late at night	Do nothing	Suggest food rest and shopping options
-Remote work at home	Suggest food rest and shopping options	Suggest events activities and photo opportunities
-A housewife shopping at a supermarket	Suggest food rest and shopping options	Provide safety and emergency support
-A man jogging early in the morning	Optimize the route	Do nothing
-A high school student attending class	Suggest spots based on the situation	Provide safety and emergency support
-Shopping at a convenience store late at night	Suggest food rest and shopping options	Optimize the route
-A businessman having lunch	Suggest food rest and shopping options	Provide safety and emergency support
-A commuter waiting for a train on the platform	Optimize the route	Suggest events activities and photo opportunities
-A university student studying at a library in the afternoon	Suggest spots based on the situation	Suggest events activities and photo opportunities
+An earthquake has just struck the city	Provide safety and emergency support	Suggest food rest and shopping options
+Strong shaking is being felt in the building	Provide safety and emergency support	Suggest events activities and photo opportunities
+People are evacuating from a tsunami warning	Provide safety and emergency support	Optimize the route
+A typhoon is approaching the area	Provide safety and emergency support	Suggest spots based on the situation
+Floodwaters are rising rapidly in the neighborhood	Provide safety and emergency support	Do nothing
+The power has gone out during a storm	Provide safety and emergency support	Suggest food rest and shopping options
+Loud emergency sirens are heard outside	Provide safety and emergency support	Suggest events activities and photo opportunities
+People are gathering at an evacuation center	Provide safety and emergency support	Suggest spots based on the situation
+A fire has broken out in the apartment	Provide safety and emergency support	Optimize the route
+Aftershocks are continuing through the night	Provide safety and emergency support	Do nothing
+Heavy snow has blocked roads and train lines	Provide safety and emergency support	Suggest food rest and shopping options
+An emergency alert has been received on the phone	Provide safety and emergency support	Suggest events activities and photo opportunities
+A landslide warning has been issued in the area	Provide safety and emergency support	Suggest spots based on the situation
+Hospitals are crowded after a major quake	Provide safety and emergency support	Suggest food rest and shopping options
+People are trapped in an elevator during a blackout	Provide safety and emergency support	Do nothing
+A child is separated from their parents during evacuation	Provide safety and emergency support	Suggest events activities and photo opportunities
+Sudden strong winds are causing outdoor hazards	Provide safety and emergency support	Suggest food rest and shopping options
+A building has collapsed in the neighborhood	Provide safety and emergency support	Optimize the route
+Emergency vehicles are arriving at the scene	Provide safety and emergency support	Suggest events activities and photo opportunities
+People are seeking shelter from hail and lightning	Provide safety and emergency support	Do nothing
