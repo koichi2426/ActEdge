@@ -38,7 +38,7 @@ def cosine_similarity(a, b):
     return np.dot(a, b) / (np.linalg.norm(a) * np.linalg.norm(b))
 
 # ==========================
-# 入力文と最も近いメソッドを1つ選択
+# 入力文と最も近いメソッドをすべて表示（類似度順）
 # ==========================
 def select_best_method(user_text):
     # [1] モデル・トークナイザー読み込み
@@ -55,19 +55,30 @@ def select_best_method(user_text):
 
     # [4] 各メソッドとの類似度を計算
     sims = [cosine_similarity(user_vec, v) for v in method_vecs]
-    best_index = int(np.argmax(sims))
-    best_method = method_texts[best_index]
-    score = sims[best_index]
-
-    return best_method, score
+    
+    # [5] すべてのインデックスを類似度順に取得
+    sorted_indices = np.argsort(sims)[::-1]
+    
+    # [6] 結果を整形
+    results = []
+    for idx in sorted_indices:
+        results.append({
+            'method': method_texts[idx],
+            'score': float(sims[idx])  # NumPyのfloat32をPythonのfloatに変換
+        })
+    
+    return results
 
 # ==========================
 # 実行テスト用（CLIなど）
 # ==========================
 if __name__ == "__main__":
-    user_input = "30代男性。朝。オフィスにいる。"
-    best_method, sim_score = select_best_method(user_input)
+    user_input = "地震が発生した。"
+    results = select_best_method(user_input)
 
     print("\n[ユーザー入力]", user_input)
-    print("[選択されたメソッド]", best_method)
-    print("[類似度スコア]", round(sim_score, 4))
+    print("\n[類似度スコア順メソッド一覧]")
+    for i, result in enumerate(results, 1):
+        print(f"{i}. スコア: {round(result['score'], 4)}")
+        print(f"   メソッド: {result['method']}")
+        print()
